@@ -5,13 +5,12 @@ before_install:
   - echo "We are in the Docker folder!"
 script:
   - docker-compose build
-before_deploy:
-  - echo Msii*2016 | docker login --username achrafh01 --password-stdin
 deploy:
   provider: script
   script:
-    docker push achrafh01/mysql-rest-with-spring-boot-udemy;
-    docker push achrafh01/rest-with-spring-boot-udemy;
+  - echo Msii*2016 | docker login --username achrafh01 --password-stdin
+  - docker push achrafh01/mysql-rest-with-spring-boot-udemy;
+  - docker push achrafh01/rest-with-spring-boot-udemy;
   on:
     all_branches: true
 notifications:

@@ -5,11 +5,5 @@ before_install:
   - echo "We are in the Docker folder!"
 script:
   - docker-compose build
-deploy:
-  provider: script
-  script:
-  - echo "deploying...."
-  on:
-    all_branches: true
 notifications:
   email: false

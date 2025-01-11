@@ -10,12 +10,11 @@ script:
   - docker-compose build
 before_deploy:
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
+  - rvm use $TRAVIS_RUBY_VERSION do script.rb
 deploy:
   provider: script
   script:
     - docker push achrafh01/mysql-rest-with-spring-boot-udemy;
     - docker push achrafh01/rest-with-spring-boot-udemy;
-  provider: script
-  script: rvm use $TRAVIS_RUBY_VERSION do script.rb
 notifications:
   email: false

@@ -7,7 +7,7 @@ script:
   - docker-compose build
 before_deploy:
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
-  - gem install dpl --pre
+  - gem install json_pure -v 2.7.6
 deploy:
   provider: script
   script:

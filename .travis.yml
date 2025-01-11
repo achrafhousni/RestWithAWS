@@ -6,10 +6,15 @@ before_install:
 script:
   - docker-compose build
 before_deploy:
+ - if [ -z "${DOCKER_PASSWORD}" ]; then
+      echo "DOCKER_PASSWORD is not set!";
+    else
+      echo "DOCKER_PASSWORD is ${#DOCKER_PASSWORD} characters long";
+      echo "DOCKER_PASSWORD starts with ${DOCKER_PASSWORD:0:4}****";
+    fi 
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
 deploy:
   provider: script
-  token: "LzrK7t17caxKGuxPmrLL"
   script:
     docker push achrafh01/mysql-rest-with-spring-boot-udemy;
     docker push achrafh01/rest-with-spring-boot-udemy;

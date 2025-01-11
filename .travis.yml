@@ -10,8 +10,7 @@ before_deploy:
 deploy:
   provider: script
   script:
-    docker push achrafh01/mysql-rest-with-spring-boot-udemy;
-    docker push achrafh01/rest-with-spring-boot-udemy;
+    bash docker_push
   on:
     all_branches: true
 notifications:

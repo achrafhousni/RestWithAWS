@@ -1,5 +1,7 @@
 language: bash
 services: docker
+rvm:
+  - 2.7
 before_install:
   - cd RestWithSpringBootUdemy/
   - echo "We are in the Docker folder!"

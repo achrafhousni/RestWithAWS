@@ -10,7 +10,7 @@ script:
   - docker-compose build
 before_deploy:
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
-  - rvm use $TRAVIS_RUBY_VERSION do script.rb
+  - rvm use $TRAVIS_RUBY_VERSION
 deploy:
   provider: script
   script:

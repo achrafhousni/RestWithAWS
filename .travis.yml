@@ -15,5 +15,6 @@ deploy:
   on:
     branch: master
   dpl_version: 0.1
+  edge: true
 notifications:
   email: false

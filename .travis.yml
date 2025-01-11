@@ -12,6 +12,7 @@ deploy:
   script:
     - docker push achrafh01/mysql-rest-with-spring-boot-udemy;
     - docker push achrafh01/rest-with-spring-boot-udemy;
-  skip_cleanup: false
+  on:
+    tags: true
 notifications:
   email: false

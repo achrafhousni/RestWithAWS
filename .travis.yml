@@ -6,8 +6,7 @@ before_install:
 script:
   - docker-compose build
 before_deploy:
-  - echo "DOCKER_PASSWORD is $DOCKER_PASSWORD characters long";
-  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+  - echo Msii*2016 | docker login --username achrafh01 --password-stdin
 deploy:
   provider: script
   script:

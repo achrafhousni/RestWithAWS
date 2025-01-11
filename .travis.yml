@@ -16,6 +16,6 @@ deploy:
     - docker push achrafh01/mysql-rest-with-spring-boot-udemy || echo "Failed to push MySQL image";
     - docker push achrafh01/rest-with-spring-boot-udemy || echo "Failed to push REST image";
   on:
-    all_branches: true
+    branch: master-1
 notifications:
   email: false

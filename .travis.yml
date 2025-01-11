@@ -9,7 +9,6 @@ before_deploy:
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
 deploy:
   provider: script
-  cleanup: true
   script:
     - docker push achrafh01/mysql-rest-with-spring-boot-udemy;
     - docker push achrafh01/rest-with-spring-boot-udemy;

@@ -1,20 +1,18 @@
 language: bash
 services: docker
 before_install:
-  - rvm install 2.7.6
-  - rvm use 2.7.6
-  - ruby -v  # Verify the Ruby version
   - cd RestWithSpringBootUdemy/
   - echo "We are in the Docker folder!"
 script:
   - docker-compose build
 before_deploy:
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
-  - rvm use $TRAVIS_RUBY_VERSION
 deploy:
   provider: script
   script:
     - docker push achrafh01/mysql-rest-with-spring-boot-udemy;
     - docker push achrafh01/rest-with-spring-boot-udemy;
+  on: 
+    - all_branches: true
 notifications:
   email: false

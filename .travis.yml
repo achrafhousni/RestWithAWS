@@ -6,16 +6,13 @@ before_install:
 script:
   - docker-compose build
 before_deploy:
-  - echo "UserName...."
-  - echo "${DOCKER_USERNAME}"
-  - echo "${DOCKER_PASSWORD}"
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
 deploy:
   provider: script
   script:
-    - docker push achrafh01/mysql-rest-with-spring-boot-udemy || echo "Failed to push MySQL image";
-    - docker push achrafh01/rest-with-spring-boot-udemy || echo "Failed to push REST image";
+    - docker push achrafh01/mysql-rest-with-spring-boot-udemy;
+    - docker push achrafh01/rest-with-spring-boot-udemy;
   on:
-    branch: master-1
+    branch: master-2
 notifications:
   email: false

@@ -14,5 +14,6 @@ deploy:
     docker push achrafh01/rest-with-spring-boot-udemy;
   on:
     branch: master
+  edge: true
 notifications:
   email: false

@@ -1,8 +1,9 @@
 language: bash
 services: docker
-rvm:
-  - 2.7
 before_install:
+  - rvm install 2.7.6
+  - rvm use 2.7.6
+  - ruby -v  # Verify the Ruby version
   - cd RestWithSpringBootUdemy/
   - echo "We are in the Docker folder!"
 script:

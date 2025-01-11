@@ -6,7 +6,9 @@ before_install:
 script:
   - docker-compose build
 before_deploy:
-  - echo  "Docker username: ${DOCKER_USERNAME} and ${DOCKER_PASSWORD}"
+  - echo "UserName...."
+  - echo "${DOCKER_USERNAME}"
+  - echo "${DOCKER_PASSWORD}"
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
 deploy:
   provider: script

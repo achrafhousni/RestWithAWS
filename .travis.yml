@@ -7,13 +7,11 @@ script:
   - docker-compose build
 before_deploy:
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
-  - gem install json_pure -v 2.7.6
 deploy:
   provider: script
   script:
     docker push achrafh01/mysql-rest-with-spring-boot-udemy;
     docker push achrafh01/rest-with-spring-boot-udemy;
-  skip_cleanup: true
   on:
     branch: master
 notifications:

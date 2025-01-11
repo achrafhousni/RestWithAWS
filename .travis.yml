@@ -12,7 +12,7 @@ deploy:
   script:
     docker push achrafh01/mysql-rest-with-spring-boot-udemy;
     docker push achrafh01/rest-with-spring-boot-udemy;
-  edge:
+  on:
     branch: master
 notifications:
   email: false
